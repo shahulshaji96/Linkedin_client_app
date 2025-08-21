@@ -1,0 +1,33 @@
+2025-08-20 12:23:10,641 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.184:5000
+2025-08-20 12:23:10,641 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-20 12:23:10,643 - INFO -  * Restarting with stat
+2025-08-20 12:23:13,235 - WARNING -  * Debugger is active!
+2025-08-20 12:23:13,237 - INFO -  * Debugger PIN: 112-389-947
+2025-08-20 12:23:15,671 - INFO - 127.0.0.1 - - [20/Aug/2025 12:23:15] "GET /register HTTP/1.1" 200 -
+2025-08-20 12:23:15,742 - INFO - 127.0.0.1 - - [20/Aug/2025 12:23:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-20 12:23:40,725 - INFO - 127.0.0.1 - - [20/Aug/2025 12:23:40] "POST /register HTTP/1.1" 200 -
+2025-08-20 12:23:41,026 - INFO - 127.0.0.1 - - [20/Aug/2025 12:23:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-20 12:29:47,850 - INFO -  * Detected change in 'c:\\Users\\ARNAV\\OneDrive\\Desktop\\Linked_dashboard_uptd\\models.py', reloading
+2025-08-20 12:29:48,258 - INFO -  * Restarting with stat
+2025-08-20 12:29:50,602 - WARNING -  * Debugger is active!
+2025-08-20 12:29:50,604 - INFO -  * Debugger PIN: 112-389-947
+2025-08-20 12:29:54,614 - INFO - 127.0.0.1 - - [20/Aug/2025 12:29:54] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-08-20 12:29:54,636 - INFO - 127.0.0.1 - - [20/Aug/2025 12:29:54] "GET /login HTTP/1.1" 200 -
+2025-08-20 12:29:54,657 - INFO - 127.0.0.1 - - [20/Aug/2025 12:29:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-20 12:29:58,503 - INFO - 127.0.0.1 - - [20/Aug/2025 12:29:58] "GET /register HTTP/1.1" 200 -
+2025-08-20 12:29:58,812 - INFO - 127.0.0.1 - - [20/Aug/2025 12:29:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-20 12:30:15,207 - INFO - 127.0.0.1 - - [20/Aug/2025 12:30:15] "POST /register HTTP/1.1" 200 -
+2025-08-20 12:30:15,226 - INFO - 127.0.0.1 - - [20/Aug/2025 12:30:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-20 12:31:11,139 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:11] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-08-20 12:31:11,145 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:11] "GET /login HTTP/1.1" 200 -
+2025-08-20 12:31:11,471 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-20 12:31:26,422 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-20 12:31:26,443 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:26] "GET /dashboard HTTP/1.1" 200 -
+2025-08-20 12:31:26,795 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-20 12:31:36,561 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:36] "GET /settings HTTP/1.1" 200 -
+2025-08-20 12:31:36,878 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-20 12:31:42,095 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:42] "GET /dashboard HTTP/1.1" 200 -
+2025-08-20 12:31:42,195 - INFO - 127.0.0.1 - - [20/Aug/2025 12:31:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

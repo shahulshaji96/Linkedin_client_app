@@ -1,0 +1,14 @@
+name: Test GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # allows you to run it manually
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hello
+        run: echo "Hello from GitHub Actions!"
