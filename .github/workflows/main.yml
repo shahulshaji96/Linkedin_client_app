@@ -1,14 +1,85 @@
-name: Test GitHub Actions
+name: Build and Release Client Bot
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch: # allows you to run it manually
+    tags:
+      - 'v*'        # Only run when pushing tags like v1.0.0
+  workflow_dispatch:   # Allow manual triggering as well
 
 jobs:
-  test-job:
-    runs-on: ubuntu-latest
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+        python-version: [3.11]
+
     steps:
-      - name: Print hello
-        run: echo "Hello from GitHub Actions!"
+      # 1. Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Set up Python
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pyinstaller
+
+      # 4. Build executable with PyInstaller
+      - name: Build executable
+        run: |
+          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            pyinstaller --onefile --name client_bot.exe client_bot.py
+          else
+            pyinstaller --onefile --name client_bot client_bot.py
+          fi
+
+      # 5. Upload the built artifact
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.os }}-build
+          path: dist/*
+
+  release:
+    name: Create GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      # 6. Download all build artifacts from the matrix
+      - name: Download Windows build
+        uses: actions/download-artifact@v3
+        with:
+          name: windows-latest-build
+          path: ./windows
+
+      - name: Download macOS build
+        uses: actions/download-artifact@v3
+        with:
+          name: macos-latest-build
+          path: ./macos
+
+      - name: Download Linux build
+        uses: actions/download-artifact@v3
+        with:
+          name: ubuntu-latest-build
+          path: ./linux
+
+      # 7. Create GitHub Release and attach executables
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            windows/client_bot.exe
+            macos/client_bot
+            linux/client_bot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
